@@ -1,0 +1,21 @@
+When i created the charge i display the returned object and both  account id and this 
+charge id (ch_16rNdMBQtFgyacgorYN03OJf) were there. Note, i stored the charge id into the database and used it suring refund.
+
+Account ID :acct_16phSRBQtFgyacgo
+
+Fatal error: Uncaught exception 'Stripe\Error\InvalidRequest' with message 'No such payment: ch_16rNdMBQtFgyacgorYN03OJf'
+ in /hermes/bosnaweb11a/b1239/ipg.retainupcom/html/stripe-php/lib/ApiRequestor.php:102 from API request
+ 'req_75ihv65MSB2yIt'
+Stack trace:
+#0 /hermes/bosnaweb11a/b1239/ipg.retainupcom/html/stripe-php/lib/ApiRequestor.php(216): Stripe\ApiRequestor-
+>handleApiError('{?  "error": {?...', 404, Array, Array)
+#1 /hermes/bosnaweb11a/b1239/ipg.retainupcom/html/stripe-php/lib/ApiRequestor.php(60): Stripe\ApiRequestor-
+>_interpretResponse('{?  "error": {?...', 404, Array)
+#2 /hermes/bosnaweb11a/b1239/ipg.retainupcom/html/stripe-php/lib/ApiResource.php(105): Stripe\ApiRequestor-
+>request('post', '/v1/refunds', Array, Array)
+#3 /hermes/bosnaweb11a/b1239/ipg.retainupcom/html/stripe-php/lib/ApiResource.php(137): Stripe\ApiResource
+::_staticRequest('post', '/v1/refunds', Array, NULL)
+#4 /hermes/bosnaweb11a/b1239/ipg.retainupcom/html/stripe-php/lib/Refund.php(38): Stripe\ApiResource:
+:_create(Array, NULL)
+#5 /hermes/bosnaweb in /hermes/bosnaweb11a/b1239/ipg.retainupcom/html/stripe-php/lib/ApiRequestor.php
+ on line 102
